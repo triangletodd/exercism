@@ -1,7 +1,8 @@
 class Pangram
   ALPHABET = ('a'..'z').to_a
   def self.is_pangram?(str)
-    ALPHABET.all? { |letter| str.downcase.split('').include?(letter) }
+    str_chars = str.downcase.split('')
+    ALPHABET.all? { |letter| str_chars.include?(letter) }
   end
 end
 
