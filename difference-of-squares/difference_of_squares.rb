@@ -1,14 +1,29 @@
 class Squares
-  attr_accessor :difference, :square_of_sum, :sum_of_squares
-  
   def initialize(fixnum)
     raise ArgumentError unless fixnum.is_a?(Fixnum)
-    numbers = (0..fixnum).to_a
-    sum_of_numbers = numbers.inject(&:+)
-    squares = numbers.map { |number| number ** 2 }
-    @square_of_sum = sum_of_numbers ** 2
-    @sum_of_squares = squares.inject(&:+)
-    @difference = @square_of_sum - @sum_of_squares
+    @numbers = (0..fixnum).to_a
+  end
+
+  def square_of_sum
+    sum_of_numbers ** 2
+  end
+
+  def sum_of_squares
+    squares.inject(&:+)
+  end
+
+  def difference
+    square_of_sum - sum_of_squares
+  end
+
+private
+
+  def sum_of_numbers
+    @numbers.inject(&:+)
+  end
+
+  def squares
+    @numbers.map { |number| number ** 2 }
   end
 end
 
