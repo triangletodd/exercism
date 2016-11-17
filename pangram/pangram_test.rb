@@ -14,49 +14,41 @@ class PangramTest < Minitest::Test
   end
 
   def test_pangram_with_only_lower_case
-    skip
     str = 'the quick brown fox jumps over the lazy dog'
     assert Pangram.is_pangram?(str)
   end
 
   def test_missing_character_x
-    skip
     str = 'a quick movement of the enemy will jeopardize five gunboats'
     refute Pangram.is_pangram?(str)
   end
 
   def test_another_missing_character_x
-    skip
     str = 'the quick brown fish jumps over the lazy dog'
     refute Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_underscores
-    skip
     str = 'the_quick_brown_fox_jumps_over_the_lazy_dog'
     assert Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_numbers
-    skip
     str = 'the 1 quick brown fox jumps over the 2 lazy dogs'
     assert Pangram.is_pangram?(str)
   end
 
   def test_missing_letters_replaced_by_numbers
-    skip
     str = '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'
     refute Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_mixed_case_and_punctuation
-    skip
     str = '"Five quacking Zephyrs jolt my wax bed."'
     assert Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_non_ascii_characters
-    skip
     str = 'Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.'
     assert Pangram.is_pangram?(str)
   end
@@ -78,7 +70,6 @@ class PangramTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 2, BookKeeping::VERSION
   end
 end
