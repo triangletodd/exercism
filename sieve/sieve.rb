@@ -8,10 +8,6 @@ class Sieve
     calculate unless number < 2
   end
 
-  def primes
-    @primes
-  end
-
 private
 
   def calculate
